@@ -1,0 +1,26 @@
+Задание 1
+
+%Управляющие структуры ветвления
+function message = Decade(d)
+if (d>=21) && (d<=31) 
+    message = sprintf('Число %d попадает в третью декаду месяца',d);
+else
+    message = sprintf('Число %d не попадает в третью декаду месяца',d);
+end
+end
+
+%Decade(N)
+
+Задание 2
+
+function [zamena_a, zamena_b] = numbers(a,b)
+if a < b
+    zamena_a = a*b;
+    zamena_b = b/2;
+else
+    zamena_a = a/2;
+    zamena_b = a*b;
+end
+end
+
+%[x, y]=numbers(M,N)
