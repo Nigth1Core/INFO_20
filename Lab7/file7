@@ -1,0 +1,29 @@
+Задание 1
+
+a=2.8;
+b=0.7;
+Y=0;
+for k=1:15
+    Y(k+1)=Y(k)+(log(a)+k*log(b));
+end;
+Y
+
+Задание 2
+
+%Моя xcosx
+E = 0.002;
+x = 1.2;
+n = 0;
+a = 1.44;
+s = a;
+Y=[0 0 0];
+while abs(a) > E
+    Y=[a, s, n];
+    n=n+1;
+    a=(-1)^n*x^(2*n+2)/factorial(2*n);
+    s =s+a;
+end
+fprintf('Сумма ряда %.8f\n', s);
+fprintf('Число членов %.d\n', n+1);
+fprintf('Точное значение %.8f\n', x*cos(x));
+fprintf('Погрешность %.2e\n', abs(s-x*cos(x)));
