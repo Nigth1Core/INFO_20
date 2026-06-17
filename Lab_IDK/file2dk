@@ -1,0 +1,7 @@
+function [Z] = KM(Y,D)
+D=[0 1 1 1 1];
+Y=eye(5);
+for i=1:5
+    Z(i)=(Y(i,1)&D(1))|(Y(i,2)&D(2))|(Y(i,3)&D(3))|(Y(i,4)&D(4))|(Y(i,5)&D(5));
+end
+end
