@@ -1,0 +1,18 @@
+% M-файлы сценарии и функции
+Xmin=2;
+Xmax=5;
+h=0.2;
+N=(Xmax-Xmin)/h;
+X=Xmin:h:Xmax;
+a=2.5;
+b=2.6;
+for n=1:N+1
+    if X(n)>4 Y(n)=b*cos((X(n)))^2;
+    elseif (2<X(n))&&(X(n)<=4) Y(n)=a*log10(X(n))+sqrt(X(n));
+    else Y(n)=0; end;
+end;
+figure(1);
+plot(X,Y,'r');
+title('Grafik X-Y');
+grid on;
+saveas(gcf,'GrFuncY.jpg');
