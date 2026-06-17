@@ -1,0 +1,24 @@
+function [x_new, y_new] = XY(x, y)
+if x>0 && y>0
+    case_id = 1;
+elseif x<0 && y<0
+    case_id = 2;
+else
+    case_id = 3;
+end
+switch case_id
+    case 1
+        x_new = x/3;
+        y_new = y/3;
+        fprintf('Оба числа положительны, так что уменьшены втрое\n');
+    case 2
+        x_new = abs(x);
+        y_new = abs(y);
+        fprintf('Оба числа отрицательны, так что заменены abs\n');
+    case 3
+        x_new = x-0.5;
+        y_new = y-0.5;
+        fprintf('Числа имеют разные знаки, так что уменьшены на 0.5\n');
+        end
+end
+%[x_new, y_new] = XY(M,N)
