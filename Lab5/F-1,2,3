@@ -1,0 +1,38 @@
+F1
+function Y=F1(X)
+a=3.2;
+Y=a*sin(X/a);
+end
+
+F2
+
+function D=F2(X)
+a=3.2;
+b=17;
+D=a*cos((b^2*X)/a);
+end
+
+F3
+
+function T=F3(X)
+a=3.2;
+b=17;
+T=a*sin(X/a)-(a*cos((b^2*X)/a));
+end
+
+Костыль чтобы работало
+
+Xmin=-0.5;
+Xmax=2;
+h=0.2;
+X=Xmin:h:Xmax;
+a=3.2;
+b=17;
+F1=@(X) a*sin(X/a);
+F2=@(X) a*cos((b^2*X)/a);
+%F3=@(X) a*sin(X/a)-a*cos((b^2*X)/a);
+plot(X,F1(X),'-b*',X,F2(X),':m.'); grid on
+saveas(gcf,'GrF1_F2.jpg');
+interval_x1 = [-0.5 0];
+interval_x2 = [0 0.5];
+interval_x3 = [1 1.5];
